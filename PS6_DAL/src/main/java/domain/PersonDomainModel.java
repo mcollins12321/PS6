@@ -1,103 +1,136 @@
 package domain;
 
-
-import java.time.LocalDate;
-
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import util.LocalDateAdapter;
+import java.util.Date;
+import java.util.UUID;
 
 public class PersonDomainModel {
+	
+    protected  UUID PersonID;
+    protected  String firstName;
+    protected  String lastName;
+    protected  String street;
+    protected  Integer postalCode;
+    protected  String city;
+    protected  Date birthday;
 
-    private  StringProperty firstName;
-    private  StringProperty lastName;
-    private  StringProperty street;
-    private  IntegerProperty postalCode;
-    private  StringProperty city;
-    private  ObjectProperty<LocalDate> birthday;
-
-    /**
-     * Default constructor.
-     */
+    
+	public PersonDomainModel() {
+		this.PersonID = UUID.randomUUID();
+		this.postalCode = 0;
+	}
 
 
-    public String getFirstName() {
-        return firstName.get();
-    }
+	/**
+	 * @return the personID
+	 */
+	public UUID getPersonID() {
+		return PersonID;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName.set(firstName);
-    }
 
-    public StringProperty firstNameProperty() {
-        return firstName;
-    }
+	/**
+	 * @param personID the personID to set
+	 */
+	public void setPersonID(UUID personID) {
+		PersonID = personID;
+	}
 
-    public String getLastName() {
-        return lastName.get();
-    }
 
-    public void setLastName(String lastName) {
-        this.lastName.set(lastName);
-    }
+	/**
+	 * @return the firstName
+	 */
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public StringProperty lastNameProperty() {
-        return lastName;
-    }
 
-    public String getStreet() {
-        return street.get();
-    }
+	/**
+	 * @param firstName the firstName to set
+	 */
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public void setStreet(String street) {
-        this.street.set(street);
-    }
 
-    public StringProperty streetProperty() {
-        return street;
-    }
+	/**
+	 * @return the lastName
+	 */
+	public String getLastName() {
+		return lastName;
+	}
 
-    public int getPostalCode() {
-        return postalCode.get();
-    }
 
-    public void setPostalCode(int postalCode) {
-        this.postalCode.set(postalCode);
-    }
+	/**
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    public IntegerProperty postalCodeProperty() {
-        return postalCode;
-    }
 
-    public String getCity() {
-        return city.get();
-    }
+	/**
+	 * @return the street
+	 */
+	public String getStreet() {
+		return street;
+	}
 
-    public void setCity(String city) {
-        this.city.set(city);
-    }
 
-    public StringProperty cityProperty() {
-        return city;
-    }
+	/**
+	 * @param street the street to set
+	 */
+	public void setStreet(String street) {
+		this.street = street;
+	}
 
-    @XmlJavaTypeAdapter(LocalDateAdapter.class)
-    public LocalDate getBirthday() {
-        return birthday.get();
-    }
 
-    public void setBirthday(LocalDate birthday) {
-        this.birthday.set(birthday);
-    }
+	/**
+	 * @return the postalCode
+	 */
+	public Integer getPostalCode() {
+		return postalCode;
+	}
 
-    public ObjectProperty<LocalDate> birthdayProperty() {
-        return birthday;
-    }
+
+	/**
+	 * @param postalCode the postalCode to set
+	 */
+	public void setPostalCode(Integer postalCode) {
+		this.postalCode = postalCode;
+	}
+
+
+	/**
+	 * @return the city
+	 */
+	public String getCity() {
+		return city;
+	}
+
+
+	/**
+	 * @param city the city to set
+	 */
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+
+	/**
+	 * @return the birthday
+	 */
+	public Date getBirthday() {
+		return birthday;
+	}
+
+
+	/**
+	 * @param birthday the birthday to set
+	 */
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+    
+   
+    
 }
